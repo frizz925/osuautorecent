@@ -1,0 +1,2 @@
+This page is used for users who want to have their tokens removed from the database, preventing the application from posting recent activity tweets for them.
+The user will be taken back to the application authorization page once again in order to get their access tokens. These access tokens will be used to match with existing tokens in the database. If matching tokens found in the database, it will be removed right away.
