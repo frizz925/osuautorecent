@@ -6,14 +6,14 @@ Part of my little Automation Project. This is basically a Twitter application fo
 Requirements:
 * Python 2.x (2.7 recommended)
 	* Modules
-		* [python-twitter][https://github.com/bear/python-twitter]
+		* [python-twitter](https://github.com/bear/python-twitter)
 * PHP 5+
 
 Libraries used:
 * Python
-	* [python-twitter][https://github.com/bear/python-twitter]
+	* [python-twitter](https://github.com/bear/python-twitter)
 * PHP
-	* [twitteroauth][https://github.com/abraham/twitteroauth]
+	* [twitteroauth](https://github.com/abraham/twitteroauth)
 
 To-do list:
 * Encrypting tokens database for better security of user's tokens.
