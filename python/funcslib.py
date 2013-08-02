@@ -28,8 +28,9 @@ class Functions(object): # class for functions that handle with local files	clas
 			if len(prefix) + len(tweet) + len(suffix) > 140:
 				maxchars = 135 - len(suffix) - len(prefix)
 				tweet = tweet[:maxchars] + "..."
-		
+
 			tweet = prefix + " " + tweet + " " + suffix
+			tweet = tweet.strip()
 			self.funcs.printlog("Tweeting \"%s\"..." % tweet)
 		
 			retry = {}
@@ -50,6 +51,9 @@ class Functions(object): # class for functions that handle with local files	clas
 		
 			if not posted:
 				self.funcs.printlog("Failed to post tweet after %s retries. Aborted." % retry['max'])
+
+			# timeout for 5 secs
+			time.sleep(5)
 
 	def twitter(self, keys):
 		return self.Twitter(self, keys)
