@@ -1,0 +1,9 @@
+{
+	"timeout" : 300,
+	"tokens_url" : "URL_TO_TOKENS_DATABASE_HERE",
+	"tokens_file" : "PATH_TO_SAVE_TOKENS_DATABASE_HERE",
+	"tweet_suffix" : "TWEET_SUFFIX_HERE",
+	"osuapi_key" : "OSU!API_KEY_HERE",
+	"app_keys" : ["CONSUMER_KEY_HERE", "CONSUMER_SECRET_HERE"],
+	"test_access_keys" : ["TEST_ACCESS_KEY_HERE", "TEST_ACCESS_SECRET_HERE"]
+}

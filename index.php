@@ -14,7 +14,7 @@ function ShowPage() {
 
 <html>
 	<head>
-		<title>Automation Project</title>
+		<title>osu! Automated Recent Activity Tweet</title>
 		<link href="main.css" rel="stylesheet" type="text/css">
 	</head>
 	<body>
