@@ -16,7 +16,7 @@ Part of my little Automation Project. This is basically a Twitter application fo
 # Changelog
 * 08/07/2013
 	* General
-		* Whole new looks for the page, supported with jQuery.
+		* Whole new looks for the page, supported by jQuery.
 * 08/02/2013
 	* General
 		* Rewrote half of the code. Now utilizes osu!api rather than stripping off user's osu! profile page.
