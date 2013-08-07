@@ -2,7 +2,7 @@
 session_name("osuautorecent");
 session_start();
 require_once('config.php');
-require_once('../../twitter/twitteroauth.php');
+require_once('../twitter/twitteroauth.php');
 
 $connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET);
 $request_token = $connection->getRequestToken(OAUTH_CALLBACK);

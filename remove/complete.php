@@ -3,7 +3,7 @@ session_name("osuautorecent");
 session_start();
 require_once('config.php');
 require_once('../file.php');
-require_once('../../twitter/twitteroauth.php');
+require_once('../twitter/twitteroauth.php');
 
 function CompleteRequest() {
 

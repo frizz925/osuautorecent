@@ -2,9 +2,9 @@
 Part of my little Automation Project. This is basically a Twitter application for posting recent activities from osu! to user's Twitter account.
 
 # Requirements
-* jQuery 2.x (2.0.3 recommended)
-* Python 2.x (2.7 recommended)
-* PHP 5.3+
+* jQuery 2 (2.0.3 recommended)
+* Python 2 (2.7 recommended)
+* PHP 5 (5.3 recommended)
 
 # Libraries used
 * Python
