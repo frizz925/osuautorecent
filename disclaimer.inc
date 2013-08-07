@@ -8,10 +8,5 @@
 	I will not take responsibility for any damage done by this application. This application is <b>not 100% stable</b> yet.<br>
 	<br>
 	<input type="submit" value="I agree"><br>
-	<br>
-	A total of <?php echo $usercount ?> different users have used this application.<br>
-	Source code is now available at <a href="https://github.com/Frizz925/osuautorecent">GitHub</a>.<br>
-	Found a bug or issue? Report it <a href="https://github.com/Frizz925/osuautorecent/issues">here!</a><br>
-	<span style="font-size: 12px;">Sshh... need to remove your tokens? <a href="./remove">Go here!</a></span><br>
 	<input type="hidden" name="agreement" value="1">
 </form>

@@ -1,21 +1,22 @@
 <?php
+session_name("osuautorecent");
+session_start();
 require_once('file.php');
 require_once('config.php');
-require_once('twitter/twitteroauth.php');
+require_once('../twitter/twitteroauth.php');
 
 function CompleteRequest() {
-	session_start();
 
 	# missing request tokens
 	if (empty($_SESSION['oauth_token'])) {
-		return "Whoops. Something went wrong: The request tokens are missing. Please try again.<br>";
+		return "Whoops. Something went wrong: The request tokens are missing. Please try again.";
 	}
 
 	# old request tokens
 	if (isset($_GET['oauth_token']) && $_SESSION['oauth_token'] !== $_GET['oauth_token']) {
 		session_destroy();
 		$_SESSION['oauth_status'] = 'oldtoken';
-		return "Whoops. Something went wrong: The request tokens are either old or mismatched. Please try again.<br>";
+		return "Whoops. Something went wrong: The request tokens are either old or mismatched. Please try again.";
 	}
 
 	$connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $_SESSION['oauth_token'], $_SESSION['oauth_token_secret']);
@@ -27,9 +28,11 @@ function CompleteRequest() {
 
 	# access tokens unavailable
 	if (empty($access_token) || empty($access_token['oauth_token']) || empty($access_token['oauth_token_secret'])) {
-		session_destroy();
-		return "Whoops. Something went wrong: Your access tokens are not found!<br>";
+		return "Whoops. Something went wrong: Your access tokens are not found!";
 	}
+
+	# unset tokens
+	session_destroy();
 
 	$tokens = array();
 	foreach (file(TOKENS) as $line) {
@@ -40,7 +43,7 @@ function CompleteRequest() {
 
 	# access tokens already exist
 	if (in_array($access_token['oauth_token']." ".$access_token['oauth_token_secret'], $tokens)) {
-		return "Error: Your access tokens already exist in the database!<br>";
+		return "Error: Your access tokens already exist in the database!";
 	}
 
 	# append tokens to the database
@@ -49,7 +52,7 @@ function CompleteRequest() {
 
 	# user tokens have been sucessfully stored in the database
 	return "Success: Your tokens have been stored in the database!<br>
-	Please note that the application <b>periodically</b> checks for a new recent activity every 15 minutes (it doesn't update realtime).<br>";
+	Please note that the application <b>periodically</b> checks for a new recent activity every 5 minutes (it doesn't update realtime).";
 }
 $content = CompleteRequest();
 include('response.inc');

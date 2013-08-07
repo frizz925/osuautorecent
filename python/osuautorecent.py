@@ -12,27 +12,16 @@ if not os.path.exists(cachedir): # make cache directory if not exist
 	os.makedirs(cachedir)
 
 def eventfix(html, username): # function used to remove html tags and makes text much more proper for tweeting
-	valtags = ["a", "img"]
-	tags = ["</a>", "<b>", "</b>", "<ul>", "</ul>", "<li>", "</li>"]
 	verbs = {
 		"has"	: "have",
 		"their"	: "my"
 	}
 
-	# replace username
-	html = html.replace(username, "I")
-
 	# remove tags
-	for t in tags:
-		html = html.replace(t, "")
-
-	# remove tags with values
-	for vt in valtags:
-		str = "<" + vt
-		while html.find(str) > -1:
-			start = html.find(str)
-			end = html.find(">", start) + 1
-			html = html.replace(html[start:end], "")
+	html = funcs.strip_tags(html)
+	
+	# replace username
+	html = html.replace(username, "I", 1)
 
 	# fix verbs
 	for v in verbs:
@@ -102,7 +91,6 @@ def main():
 		# access osu!api
 		# thanks to osu!api, everything's done much more easier now and it now accepts username
 		page = funcs.readpage("http://osu.ppy.sh/api/get_user?k=%s&u=%s" % (json_dict["osuapi_key"], userid))
-		page = funcs.unescape(page)
 
 		# decode json from osu!api
 		osu_api_json = json.loads(page)

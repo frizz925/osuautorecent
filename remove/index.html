@@ -2,14 +2,19 @@
 	<head>
 		<title>Tokens Removal Page</title>
 		<link href="../main.css" rel="stylesheet" type="text/css">
+		<script src="../../jquery-2.0.3.min.js" type="text/javascript"></script>
+		<script src="../main.js" type="text/javascript"></script>
 	</head>
 	<body>
 		<div class="wrapper">
 			<h1>osu! Automated Recent Activity Tweet</h1>
-			Are you sure you want to remove your tokens from the database? This will stop the application from posting tweets for you.<br>
-			Note: You will be redirected to the application authorization page once again to find your tokens in the database.<br>
-			<button onClick='window.location = "./redirect.php"'>Yes</button>
-			<button onClick='window.location = "../index.php"'>No</button>
+			<hr>
+			<div class="hidden">
+				Are you sure you want to remove your tokens from the database? This will stop the application from posting tweets for you.<br>
+				Note: You will be redirected to the application authorization page once again to find your tokens in the database.<br>
+				<button onClick='window.location = "./redirect.php"'>Yes</button>
+				<button onClick='window.location = "../index.php"'>No</button>
+			</div>
 		</div>
 	</body>
 </html>

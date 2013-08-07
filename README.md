@@ -11,9 +11,6 @@ Part of my little Automation Project. This is basically a Twitter application fo
 * PHP
 	* [twitteroauth](https://github.com/abraham/twitteroauth)
 
-# To-do list
-* Encrypting tokens database on-the-fly for better security of user's tokens.
-
 # Changelog
 * 08/02/2013
 	* General

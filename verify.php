@@ -1,5 +1,7 @@
 <?php
 # this is used for processing user's request before redirecting the user to the application authorization page
+session_name("osuautorecent");
+session_start();
 require_once('file.php');
 require_once('config.php');
 
@@ -47,13 +49,13 @@ function ProcessRequest() {
 	}
 
 	# save userid in the session
-	session_start();
 	$_SESSION['userid'] = $userid;
 
 	# start processing request
 	header('Location: ./redirect.php'); 
 }
 
-$content = ProcessRequest();
-include('response.inc');
+$message = ProcessRequest();
+$page = 'form.inc';
+include('home.inc');
 ?>

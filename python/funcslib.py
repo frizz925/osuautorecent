@@ -172,15 +172,28 @@ class Functions(object): # class for functions that handle with local files	clas
 		if not page:
 			funcs.printlog("Connection failed after %s retries. Please check your internet connection. Exiting..." % retry['max'])
 			sys.exit(1)
+
+		page = page.decode('utf-8')
+		page = HTMLParser().unescape(page)
+		page = page.encode('utf-8')
 	
 		return page
+
+	class MLStripper(HTMLParser):
+		def __init__(self):
+			self.reset()
+			self.fed = []
+		def handle_data(self, d):
+			self.fed.append(d)
+		def get_data(self):
+			return ''.join(self.fed)
+
+	def strip_tags(self, html):
+		s = self.MLStripper()
+		s.feed(html)
+		return s.get_data()
 
 	def savepage(self, url, fn):
 		page = self.readpage(url)
 		save = self.file(fn)
 		save.Write(page)
-
-	def unescape(self, str): # unescape html symbols
-		str = str.decode('utf-8')
-		str = HTMLParser().unescape(str)
-		return str

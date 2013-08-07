@@ -1,10 +1,11 @@
 <?php
+session_name("osuautorecent");
+session_start();
 require_once('config.php');
 require_once('../file.php');
-require_once('../twitter/twitteroauth.php');
+require_once('../../twitter/twitteroauth.php');
 
 function CompleteRequest() {
-	session_start();
 
 	# missing request tokens
 	if (empty($_SESSION['oauth_token'])) {
@@ -57,7 +58,7 @@ function CompleteRequest() {
 		}
 	}
 
-	# user tokens have been sucessfully stored in the database
+	# user tokens have been sucessfully removed from the database
 	return "Success: Your tokens have been removed from the database.<br>";
 }
 $content = CompleteRequest();

@@ -1,12 +1,9 @@
 <?php
+define('TOKENS', 'tokens.scrt');
+define('OSUAPI_KEY', '3ba676f93b2d8fa6ecb2b857fefa4530a21fd50d');
+define('CONSUMER_KEY', 'sIaGcAI6wVYipOX1ZWoA');
+define('CONSUMER_SECRET', '4QZgGNHIfgp9CaGlzfPwLTQ4py4cmY8ofv41ppbAPY');
+define('OAUTH_CALLBACK', 'http://autopro.p.ht/osuautorecent/complete.php');
 
-/**
- * @file
- * A single location to store configuration.
- */
-
-define('TOKENS', 'TOKENS_FILE_HERE');
-define('OSUAPI_KEY', 'OSU_API_KEY_HERE');
-define('CONSUMER_KEY', 'CONSUMER_KEY_HERE');
-define('CONSUMER_SECRET', 'CONSUMER_SECRET_HERE');
-define('OAUTH_CALLBACK', 'http://localhost/osuautorecent/complete.php');
+$usercount = count(file(TOKENS));
+?>
